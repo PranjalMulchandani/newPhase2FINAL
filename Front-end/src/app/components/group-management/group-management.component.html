@@ -1,0 +1,68 @@
+<div class="maindiv">
+  <div class="group-management-container">
+    <h1>Group Management</h1>
+
+    <!-- Create Group Section -->
+    <div class="create-group-section">
+      <h2>Create Group</h2>
+      <input
+        type="text"
+        [(ngModel)]="groupName"
+        placeholder="Enter group name"
+      />
+      <button (click)="createGroup()">Create Group</button>
+    </div>
+
+    <!-- Group Dropdown Section -->
+    <div class="group-dropdown-section">
+      <h2>Select a Group to Remove</h2>
+
+      <!-- Dropdown for selecting a group -->
+      <select [(ngModel)]="selectedGroupId">
+        <option *ngFor="let group of groups" [value]="group._id">
+          {{ group.name }}
+        </option>
+      </select>
+
+      <!-- Button to remove the selected group -->
+      <button (click)="removeGroup(selectedGroupId)" [disabled]="!selectedGroupId">
+        Remove Selected Group
+      </button>
+    </div>
+
+    <!-- Group and Channel List Section -->
+    <div class="group-list-section">
+      <h2>Groups and Channels</h2>
+
+      <ul>
+        <li *ngFor="let group of groups">
+          <strong>{{ group.name }}</strong>
+
+          <!-- Select Group for Channel Addition -->
+          <button (click)="selectedGroupId = group._id">Select Group</button>
+
+          <div *ngIf="selectedGroupId === group._id">
+            <h3>Add Channel</h3>
+
+            <input type="text" [(ngModel)]="channelName" placeholder="Enter channel name" />
+            <button (click)="addChannel()">Add Channel</button>
+
+          </div>
+
+          <!-- Display Channels -->
+          <ul>
+            <li *ngFor="let channel of group.channels">
+              {{ channel.name }}
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Display success message if it exists -->
+    <div *ngIf="successMessage" class="success">{{ successMessage }}</div>
+
+    <!-- Display error message if it exists -->
+    <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+  </div>
+</div>
