@@ -1,0 +1,17 @@
+<div class="maindiv">
+<div class="profile-container">
+    <h2>Upload Avatar</h2>
+    <form (ngSubmit)="uploadAvatar()" enctype="multipart/form-data">
+      <div>
+        <input type="file" (change)="onFileSelected($event)" />
+      </div>
+      <button type="submit" [disabled]="!selectedFile">Upload</button>
+    </form>
+  
+    <div *ngIf="avatarUrl">
+      <h3>Current Avatar</h3>
+      <img [src]="avatarUrl" alt="User Avatar" class="avatar-image" />
+    </div>
+  </div>
+  </div>
+  
