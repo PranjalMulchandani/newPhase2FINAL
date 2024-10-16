@@ -1,0 +1,30 @@
+<div class="maindiv">
+  <div class="admin-container">
+    <h2>Manage Users</h2>
+    <h2>All User IDs:</h2>
+    
+    <!-- Bind the selected userId to the input field -->
+    <select [(ngModel)]="selectedUserId">
+      <option *ngFor="let userId of userIds" [value]="userId">{{ userId }}</option>
+    </select>
+
+    <!-- Bind the input field to selectedUserId -->
+    <input [(ngModel)]="selectedUserId" type="text" placeholder="Enter User ID">
+
+    <select #roleSelect>
+      <option value="groupAdmin">Group Admin</option>
+      <option value="superAdmin">Super Admin</option>
+    </select>
+    <button (click)="promoteUser(selectedUserId, roleSelect.value)">Promote User</button>
+
+    <h3>Remove User</h3>
+    <input #removeUserIdInput type="text" placeholder="Enter User ID to Remove">
+    <button (click)="removeUser(removeUserIdInput.value)">Remove User</button>
+
+    <!-- Display success message if it exists -->
+    <div *ngIf="successMessage" class="success">{{ successMessage }}</div>
+    
+    <!-- Display error message if it exists -->
+    <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+  </div>
+</div>

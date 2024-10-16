@@ -1,0 +1,115 @@
+.maindiv{
+    background-color: #1b1f38;
+    height: 900px;
+    max-height: 100%;
+  }
+
+.admin-container {
+    max-width: 800px;                 
+    margin: 0 auto;                
+    padding: 20px;                    
+    background-color: #3b3e66;       
+    border-radius: 8px;               
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    color: #ffffff;                   
+}
+
+
+h2 {
+    font-size: 24px;                  
+    margin-bottom: 10px;              
+}
+
+h3 {
+    font-size: 20px;                  
+    margin: 20px 0 10px;              
+}
+
+
+ul {
+    list-style-type: none;            
+    padding: 0;                       
+    margin: 10px 0;                  
+}
+
+
+li {
+    background-color: #4a4d7d;       
+    padding: 10px;                   
+    margin: 5px 0;                   
+    border-radius: 5px;              
+}
+
+
+input[type="text"], select {
+    padding: 10px;                   
+    border-radius: 5px;              
+    border: 2px solid #5c5f8f;       
+    background-color: #3b3e66;       
+    color: #ffffff;                   
+    width: calc(100% - 22px);        
+    margin-bottom: 10px;              
+    font-size: 16px;                  
+}
+
+
+button {
+    padding: 10px 15px;              
+    border: none;                     
+    border-radius: 5px;              
+    background-color: #5c5f8f;       
+    color: #ffffff;                   
+    cursor: pointer;                  
+    transition: background-color 0.3s ease; 
+}
+
+
+button:hover {
+    background-color: #6c6f9f;       
+}
+
+
+.error {
+    color: #ff4d4d;                   
+    margin-top: 10px;                
+    font-size: 14px;                  
+}
+
+select {
+    padding: 10px 15px;               
+    border: 2px solid #5c5f8f;        
+    border-radius: 5px;               
+    background-color: #3b3e66;        
+    color: #ffffff;                    
+    font-size: 16px;                   
+    width: 100%;                       
+    margin-bottom: 15px;              
+    cursor: pointer;                   
+    transition: background-color 0.3s, border-color 0.3s; 
+}
+
+
+select:hover {
+    background-color: #4a4d7c;         
+    border-color: #7b7e9a;             
+}
+
+
+select:focus {
+    outline: none;                     
+    background-color: #4a4d7c;        
+    border-color: #7b7e9a;            
+}
+
+
+option {
+    background-color: #3b3e66;        
+    color: #ffffff;                    
+    padding: 10px;                     
+}
+
+
+select option {
+    background-color: #3b3e66;        
+    color: #ffffff;                    
+}
