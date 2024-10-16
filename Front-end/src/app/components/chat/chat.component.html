@@ -1,0 +1,39 @@
+<div class="maindiv">
+<div class="chat-container">
+  <h2>Chat Room</h2>
+
+  <div class="group-selection">
+    <label for="group">Select Group:</label>
+    <select [(ngModel)]="selectedGroup" (change)="onGroupSelect()">
+      <option *ngFor="let group of groups" [ngValue]="group">{{ group.name }}</option>
+    </select>
+  </div>
+
+  <div *ngIf="selectedGroup" class="channel-selection">
+    <label for="channel">Select Channel:</label>
+    <select [(ngModel)]="selectedChannel" (change)="onChannelSelect()">
+      <option *ngFor="let channel of channels" [ngValue]="channel">{{ channel.name }}</option>
+    </select>
+  </div>
+
+  <div *ngIf="selectedChannel">
+    <h3>Chat: {{ selectedGroup.name }} - {{ selectedChannel.name }}</h3>
+    <div class="messages">
+      <div *ngFor="let msg of messages" class="message" [ngClass]="{'notification': !msg.userId}">
+        <img *ngIf="msg.avatarUrl" [src]="msg.avatarUrl" alt="Avatar" class="avatar" />
+        
+        <p>{{ msg.content }}</p>
+      </div>
+    </div>
+
+    <div class="message-input-container">
+      <input [(ngModel)]="message" placeholder="Enter message" class="message-input" />
+      <input type="file" (change)="onFileSelected($event)" id="fileInput"/>
+      <label for="fileInput">Attach File</label>
+      
+      <button (click)="sendMessage()">Send</button>
+    </div>
+  </div>
+</div>
+</div>
+
