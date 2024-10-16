@@ -1,0 +1,14 @@
+<div class="maindiv">
+<div class="video-chat-container">
+    <h2>Video Chat</h2>
+    <p><strong>My Peer ID:</strong> {{ myPeerId }}</p>
+    <div>
+      <video #myVideo autoplay></video>
+      <video #peerVideo autoplay></video>
+    </div>
+    <div class="call">
+    <input [(ngModel)]="peerConnectionId" placeholder="Enter Peer ID">
+    <button (click)="callPeer()">Call</button>
+  </div>
+  </div>
+</div>  
