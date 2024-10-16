@@ -1,0 +1,28 @@
+<div class="maindiv">
+  <div class="register-container">
+  <h2>Register</h2>
+  <form (submit)="register()">
+    <div>
+      <input type="text" placeholder="Username" [(ngModel)]="username" name="username" required />
+    </div>
+    <div>
+      <input type="email" placeholder="Email" [(ngModel)]="email" name="email" required />
+    </div>
+    <div>
+      <input type="password" placeholder="Password" [(ngModel)]="password" name="password" required />
+    </div>
+    <div class="role-selection">
+      <label for="role">Select Role:</label>
+      <select [(ngModel)]="role" name="role">
+        <option value="user">User</option>
+        <option value="admin">Admin</option>
+        <option value="super-admin">Super Admin</option>
+      </select>
+    </div>
+    <div>
+      <button type="submit">Register</button>
+    </div>
+    <p *ngIf="errorMessage">{{ errorMessage }}</p>
+  </form>
+</div>
+</div>

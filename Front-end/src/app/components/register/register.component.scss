@@ -1,0 +1,134 @@
+
+.maindiv{
+  background-color: #1b1f38;
+  height: 900px;
+}
+
+
+
+.register-container {
+  background-color: #2a2d53;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto; 
+  
+}
+
+
+.register-container h2 {
+  font-size: 28px;
+  color: #ffffff;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+
+.register-container input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  background-color: #333666;
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.register-container input::placeholder {
+  color: #cccccc;
+}
+
+
+.register-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #5c5f8f;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.register-container button:hover {
+  background-color: #6c6f9f;
+}
+
+
+.register-container a {
+  color: #b0b0b0;
+  text-decoration: none;
+  font-size: 14px;
+  display: block;
+  margin-top: 15px;
+}
+
+.register-container a:hover {
+  color: #ffffff;
+}
+
+
+.error-message {
+  color: #ff4d4d;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+
+@media (max-width: 768px) {
+  .register-container {
+      padding: 30px;
+      max-width: 100%;
+  }
+
+  .register-container h2 {
+      font-size: 24px;
+  }
+}
+
+.role-selection {
+  margin: 20px 0;           
+  display: flex;             
+  flex-direction: column;    
+}
+
+
+.role-selection label {
+  font-size: 16px;          
+  color: #ffffff;           
+  margin-bottom: 8px;       
+}
+
+
+.role-selection select {
+  padding: 12px;            
+  background-color: #3b3e66; 
+  color: #ffffff;           
+  border: none;             
+  border-radius: 5px;      
+  font-size: 16px;          
+  transition: background-color 0.3s ease; 
+}
+
+
+.role-selection select:focus {
+  outline: none;            
+  background-color: #4b4f77; 
+}
+
+
+.role-selection option {
+  background-color: #3b3e66; 
+  color: #ffffff;           
+}
+
+
+.role-selection select:hover option {
+  background-color: #4b4f77; 
+}
