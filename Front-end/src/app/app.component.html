@@ -1,0 +1,19 @@
+
+<nav *ngIf="!isLoggedIn">
+  <ul>
+    <li><a [routerLink]="['/login']">Login</a></li>
+    <li><a [routerLink]="['/register']">Register</a></li>  
+    
+  </ul>
+</nav>
+<nav *ngIf="isLoggedIn">
+  <ul>
+    <li><a routerLink="/profile">Profile</a></li>
+    <li><a routerLink="/chat">Chat</a></li>
+    <li><a [routerLink]="['/video-chat']">Video Chat</a></li>
+    <li *ngIf="isGroupAdmin()"><a routerLink="/group-management">Group Management</a></li>
+    <li *ngIf="isSuperAdmin()"><a routerLink="/super-admin">Admin Dashboard</a></li>
+    <li><button (click)="logout()">Logout</button></li>
+  </ul>
+</nav>
+<router-outlet></router-outlet>
